@@ -3,12 +3,21 @@ const { hashPassword, comparePassword } = require('../helpers/auth')
 const jwt = require('jsonwebtoken');
 const NotificationModel = require('../models/notify')
 const nodemailer = require('nodemailer');
+const multer = require("multer");
+const path = require("path");
 
 const test = (req, res) => {
     res.json('test is working')
 }
 
-
+const storage = multer.diskStorage({
+    destination: "./uploads/",
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
+    },
+  });
+  
+  const upload = multer({ storage });
 //register endpoint
 const registerUser = async (req, res) => {
     try {
@@ -127,7 +136,7 @@ const updateUser = async (req, res) => {
     try {
         const { name, password,specialty,location,experience } = req.body;
         const { token } = req.cookies;
-
+        const profilePic = req.file ? `/uploads/${req.file.filename}` : null;
         if (token) {
             jwt.verify(token, process.env.JWT_SECRET, async (err, decodedUser) => {
                 if (err) {
@@ -159,6 +168,7 @@ const updateUser = async (req, res) => {
                 if(experience){
                     user.experience = experience;
                 }
+                if(profilePic) user.profilePic = profilePic;
 
                 await user.save(); // Save the updated user
 

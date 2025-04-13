@@ -1,0 +1,87 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements properly */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#F4f0ff,#dacdff);
+}
+
+.chatbotPopup {
+    width: 500px;
+    height: 600px;
+    background-color: #F4f0ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Ensure content stacks properly */
+    overflow: hidden;
+    position: relative; /* Makes sure the footer stays inside */
+}
+
+.chatHeader {
+    background: purple;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.chatBody {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 250px;
+    background: #ffffff;
+}
+
+.chatFooter {
+    display: flex;
+    padding: 10px;
+    background: #F4f0ff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%; /* Make sure it stretches */
+    position: absolute;
+    bottom: 0; /* Stick it to the bottom */
+    left: 0;
+}
+
+.chatForm {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.messageInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #dacdff;
+    outline: none;
+    font-size: 1rem;
+}
+
+.sendButton {
+    background: purple;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sendButton:hover {
+    background: #5a007d;
+}

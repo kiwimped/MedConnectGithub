@@ -98,13 +98,14 @@ export default function RegisterNEW() {
                 )}
 
 
+                <div>
+                Terms and Conditions: By filling this, you agree for us to use your personal information that might be implmented into our service.Agree?
                 <input
                     type="checkbox"
                     checked={data.termAgree}
                     onChange={() => setData({ ...data, termAgree: !data.termAgree })} // Toggle the state
                 />
-                Terms and Conditions: By filling this, you agree for us to use your personal information that might be implmented into our service.Agree?
-                
+                </div>
                 <button type='submit' disabled={!data.termAgree}>Submit</button>
             </form>
             </div>

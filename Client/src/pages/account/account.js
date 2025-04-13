@@ -10,14 +10,28 @@ export default function Account() {
     const [location,setLocation] = useState("");
     const [experience,setExperience] = useState(0);
     const [error, setError] = useState("");
+    const [image,setImage] = useState(null);
+    const [preview, setPreview] = useState(user?.profilePic || null); // Display profile picture
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setImage(file);
+            setPreview(URL.createObjectURL(file)); // Preview image before upload
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const data = { name, password, specialty: specialty || user.specialty,
             location: location || user.location,
-            experience: experience || user.experience
+            experience: experience || user.experience, 
+            if(image){
+                image:image || user.profilePic
+            }
          };
+         
 
         // Send the updated data to the backend
         const response = await fetch('http://localhost:8000/update', {

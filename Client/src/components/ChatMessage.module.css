@@ -1,0 +1,25 @@
+.message {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+    display: flex; /* Align chatbot icon and text properly */
+    align-items: center;
+    gap: 8px;
+}
+
+.botMessage {
+    background: #f1e3ff;
+    align-self: flex-start;
+}
+
+.userMessage {
+    background: #dacdff;
+    align-self: flex-end;
+}
+
+.chatbotIcon {
+    width: 35px;
+    height: 35px;
+}

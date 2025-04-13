@@ -13,6 +13,7 @@ const userSchema = new Schema({
     specialty: String,
     location: String,
     experience: Number,
+    profilePic: String,
     
 })
 
