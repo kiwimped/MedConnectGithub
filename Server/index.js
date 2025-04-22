@@ -18,7 +18,7 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const PORT = process.env.PORT || 8000;
 
 // Log environment values (optional, remove in production)
-console.log(MONGO_URL, JWT_SECRET, EMAIL_USER, OPENAI_API_KEY);
+//console.log(MONGO_URL, JWT_SECRET, EMAIL_USER, OPENAI_API_KEY);
 
 // OpenAI Setup
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
