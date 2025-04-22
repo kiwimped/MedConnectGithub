@@ -10,12 +10,13 @@ export const AI = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (openaiApiKey) {
-      console.log("Using OpenAI API Key:", openaiApiKey);
+      console.log("key is here")
+     // console.log("Using OpenAI API Key:", openaiApiKey);
     }
   }, [openaiApiKey]); // Run once when the component mounts
-
+*/
   // Send chat history to the backend and get the bot's response
   const generateBotResponse = async (history) => {
     try {
