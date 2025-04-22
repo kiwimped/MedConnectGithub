@@ -1,5 +1,5 @@
 
-# NewestMedconnect
+# MedConnect
 
 # Setup Instructions:
 Prerequisite: Sufficient understanding of react, javascript, express,mongodb(web account), HTML, and CSS are the required prerequisites.
